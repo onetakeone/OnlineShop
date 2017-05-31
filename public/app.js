@@ -1,0 +1,4 @@
+function smth()
+	{
+		alert('ello');
+	}
