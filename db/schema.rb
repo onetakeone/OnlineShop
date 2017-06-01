@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601081202) do
+ActiveRecord::Schema.define(version: 20170601084734) do
 
   create_table "products", force: :cascade do |t|
     t.text "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170601081202) do
     t.boolean "is_breakfast"
     t.boolean "is_best_offer"
     t.string "path_to_image"
+    t.string "path_to_image_sm"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

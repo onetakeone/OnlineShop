@@ -6,13 +6,19 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:onlineshop.db3"
 
-class Showcase < ActiveRecord::Base
+class Products < ActiveRecord::Base
 end
 
 get '/' do
+	@product = Products.all
 	erb :index
 end
 
 get '/about' do
 	erb :about
+end
+
+get '/product/:id' do
+	@product = Products.find params[:id]
+	erb :product
 end
