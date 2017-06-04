@@ -19,13 +19,10 @@ function add_to_cart(id)
 function checkout()
 {
 	var total = 0;
-
-	for(var i=0, len=localStorage.length; i<len; i++)
+	for(var i=0; i < localStorage.length; i++)
 	{
    	 var key = localStorage.key(i);
-   	 var value = localStorage[key]*1;
-   	 var total = total*1 + value;
+   	 var total = total*1 + localStorage[key]*1;
     }
-    
-    alert(total);
+     alert(total);
 }
