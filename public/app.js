@@ -38,7 +38,7 @@ function orders_input()
 
 function button_update()
 {
-	var text = 'Cart' + ' ' + '(' + checkout() + ')';
+	var text = 'Cart' + ' ' + '(' + items_in_cart() + ')';
 	$('#cart_btn').val(text);
 }
 
