@@ -35,13 +35,22 @@
 			    </button>
 			    <a class="navbar-brand" href="/">My Website</a>
 			  </div>
+
 			  <div class="navbar-collapse collapse">
 			    <ul class="nav navbar-nav">
 			      <li><a href="/about">about</a></li>
 			      <li><a href="/">index</a></li>
-			    </ul>
-			  	<button class="btn btn-success" onclick="checkout()">Checkout</button>
-			  </div><!--/.nav-collapse -->
+			    </ul>			  	
+			    <ul class="nav navbar-nav navbar-right">
+			    	<li>
+				    	<form action="/cart" method="post">
+				    		<input type="text" name="orders_btn" id="orders_input" >
+				    		<input type="submit" class="btn btn-success btn-lg" value="Cart" onclick="checkout()">
+				    	</form>
+			    	</li>
+			    </ul><!--/.nav-collapse -->
+			  </div>
+
 			</nav>
 
 			<div>
