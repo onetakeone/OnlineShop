@@ -1,10 +1,10 @@
-function smth()
-{
-	var x = window.localStorage.getItem('aaa');   // x = localStorage['aaa']
-	x = x*1 + 1;	// x = x + 1   // x * 1 to tranform string into integer
-	window.localStorage.setItem('aaa', x); // localstorage['aaa'] = x
-	alert(x);		
-}
+// function smth()
+// {
+// 	var x = window.localStorage.getItem('aaa');   // x = localStorage['aaa']
+// 	x = x*1 + 1;	// x = x + 1   // x * 1 to tranform string into integer
+// 	window.localStorage.setItem('aaa', x); // localstorage['aaa'] = x
+// 	alert(x);		
+// }
 
 
 function add_to_cart(id)
@@ -14,11 +14,11 @@ function add_to_cart(id)
 	x = x * 1 + 1
 	window.localStorage.setItem(hash_key, x);
 	alert('added product id' + id);
-	orders_in();
+	orders_input();
 }
 
 
-function checkout()
+function items_in_cart()
 {
 	var total = 0;
 	for(var i=0; i < localStorage.length; i++)
@@ -26,23 +26,29 @@ function checkout()
    	 var key = localStorage.key(i);
    	 var total = total*1 + localStorage[key]*1;
     }
-     alert (total);
-     
+     return total;     
 }
 
-function orders_in()
+function orders_input()
 {
-	var orders = order_arr();
+	var orders = orders_list();
 	$('#orders_input').val(orders);
+	button_update();
 }
 
-function order_arr()
+function button_update()
 {
-	var array = '';
+	var text = 'Cart' + ' ' + '(' + checkout() + ')';
+	$('#cart_btn').val(text);
+}
+
+function orders_list()
+{
+	var list = '';
 	for(var i=0; i < localStorage.length; i++)
 	{
    	 var key = localStorage.key(i);   //localStorage.key = key , localStorage[key] = value
-   	 var array = array + localStorage.key(i) + '=' + localStorage[key] + ',' + ' ';
+   	 var list = list + localStorage.key(i) + '=' + localStorage[key] + ',' + ' ';
    	}
-     return array;
+     return list;
 }

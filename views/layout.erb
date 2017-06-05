@@ -26,6 +26,7 @@
 
 			<!-- Static navbar -->
 			<nav class="navbar navbar-default" role="navigation">
+			
 			  <div class="navbar-header">
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			      <span class="sr-only">Toggle navigation</span>
@@ -44,8 +45,8 @@
 			    <ul class="nav navbar-nav navbar-right">
 			    	<li>
 				    	<form action="/cart" method="post">
-				    		<input type="text" name="orders_btn" id="orders_input" >
-				    		<input type="submit" class="btn btn-success btn-lg" value="Cart" onclick="checkout()">
+				    		<input type="hidden" name="orders_btn" id="orders_input" >
+				    		<input type="submit" id="cart_btn" class="btn btn-success btn-lg" value="Cart" onclick="item_in_cart()">
 				    	</form>
 			    	</li>
 			    </ul><!--/.nav-collapse -->
@@ -61,8 +62,5 @@
 			</div>
 
 	</div>
-
-
-
   </body>
 </html>
