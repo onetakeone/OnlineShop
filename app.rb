@@ -9,6 +9,9 @@ set :database, "sqlite3:onlineshop.db3"
 class Product < ActiveRecord::Base
 end
 
+class Order < ActiveRecord::Base
+end
+
 get '/' do
 	@product = Product.all
 	erb :index
@@ -23,6 +26,17 @@ get '/product/:id' do
 	erb :product
 end
 
-post '/cart' do
-	erb 'hello'
+get '/cart' do
+	erb :cart
 end
+
+post '/cart' do
+	@orderbox = Order.new params[:order]
+	@orderbox.save
+	erb :cart
+end
+
+post '/lucky' do
+	erb 'lucky!'
+end
+
