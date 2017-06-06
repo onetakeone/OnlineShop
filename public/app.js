@@ -37,14 +37,14 @@ function orders_input()
 {
 	var orders = orders_list();
 	$('#orders_input').val(orders);
-	// button_update();
+	button_update();
 }
 
 function orders_output_database()
 {
 	var orders = orders_list();
 	$('#orderdata').val(orders);	
-	// button_update();
+	button_update();
 }
 
 function button_update()
@@ -59,7 +59,7 @@ function orders_list()
 	for(var i=0; i < localStorage.length; i++)
 	{
    	 var key = localStorage.key(i);   //localStorage.key = key , localStorage[key] = value
-   	 var list = list + localStorage.key(i) + '=' + localStorage[key] + ',' + ' ';
+   	 var list = list + localStorage.key(i) + '=' + localStorage[key] + ',';
    	}
      return list;
 }
