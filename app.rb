@@ -26,9 +26,9 @@ get '/product/:id' do
 	erb :product
 end
 
-get '/cart' do
-	erb :cart
-end
+# get '/cart' do
+# 	erb :cart
+# end
 
 post '/cart' do
 	@orderbox = Order.new params[:order]
@@ -37,6 +37,9 @@ post '/cart' do
 end
 
 post '/lucky' do
-	erb 'lucky!'
+	@orderbox = Order.new params[:order]
+	@orderbox.save
+	@alert_success = 'order complete!'
+	erb :about
 end
 

@@ -57,9 +57,19 @@
 			      <%if @error && @error.length > 0 then %>
 			          <div class="alert alert-danger"><%=@error%></div>
 			      <% end %>
+			      <%if @alert_success && @alert_success.length > 0 then %>
+			      <div class="alert alert-success"><%=@alert_success%></div>
+			      <% end %>
 			      <%= yield %>
 			</div>
 
 	</div>
   </body>
 </html>
+
+<script type="text/javascript">
+$(function()
+{
+button_update()
+});
+</script>

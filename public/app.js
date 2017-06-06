@@ -37,14 +37,14 @@ function orders_input()
 {
 	var orders = orders_list();
 	$('#orders_input').val(orders);
-	button_update();
+	// button_update();
 }
 
 function orders_output_database()
 {
 	var orders = orders_list();
 	$('#orderdata').val(orders);	
-	button_update();
+	// button_update();
 }
 
 function button_update()
@@ -66,17 +66,19 @@ function orders_list()
 
 function table_orders_insert() 
 {
-	var hst=document.getElementById("orders_table");
+	var code_insert=document.getElementById("orders_table");
     for (var i=0; i < localStorage.length; i++) 
     {	
     	var key = localStorage.key(i);
-		hst.innerHTML += "<tr><td>" + localStorage.key(i) + "</td><td>" + localStorage[key] + "</td></tr>";       
+		code_insert.innerHTML += "<tr><td>" + localStorage.key(i) + "</td><td>" + localStorage[key] + "</td></tr>";       
     }
 }
 
 function orders_clear()
 {
+	// window.location.replace("http://localhost:4567/about");
 	window.localStorage.clear();
+
 }
 
 // function tableCreate() 
